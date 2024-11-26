@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ... */
+@font-face {
+  font-family: 'NeueMachina Light';
+  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Light.otf)
+}
+@font-face {
+  font-family: 'NeueMachina Regular';
+  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Regular.otf)
+}
+@font-face {
+  font-family: 'NeueMachina Ultrabold';
+  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Ultrabold.otf)
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+
+    --input: 240 5.9% 90%;
+
+    --ring: 240 10% 3.9%;
+
+    --chart-1: 12 76% 61%;
+
+    --chart-2: 173 58% 39%;
+
+    --chart-3: 197 37% 24%;
+
+    --chart-4: 43 74% 66%;
+
+    --chart-5: 27 87% 67%;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+
+    --input: 240 3.7% 15.9%;
+
+    --ring: 240 4.9% 83.9%;
+
+    --chart-1: 220 70% 50%;
+
+    --chart-2: 160 60% 45%;
+
+    --chart-3: 30 80% 55%;
+
+    --chart-4: 280 65% 60%;
+
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* custom styles */
+
+* {
+  color: #fff;
+  box-sizing: border-box;
+  font-family: 'Fira Code';
+}
+body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duration='4000']{
+  transition-duration: 4000ms;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #071624;
+}
+
+.main-container {
+  width: 100%;
+}
+
+.hero-content {
+  width: 906px;
+  height: auto;
+}
+
+.footer {
+  background-color: #071624;
+  height: 319px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.gradient-a {
+  background: linear-gradient(to right, #e4b40d, #fbd966);
+  font-size: 14px;
+  border-radius: 100px;
+  padding: 10px;
+  /* line-height: 16.5px; */
+}
+.gradient-a:hover {
+  background: linear-gradient(to right, #fbd966, #e4b40d);
+}
+.border-a {
+  border-radius: 100px;
+  padding: 10px;
+  border: 1px solid #e4b40d;
+  color: #e4b40d;
+}
+.border-a:hover {
+  background-color: #d9d9d91a;
+}
+
+.contact-heading {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.feature-card {
+  width: 296px;
+  height: 291px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 5%;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.icon-container {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  width: max-content;
+  height: auto;
+}
+
+.faqs-section-container {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  width: 997px;
+  height: auto;
+}
+
+.comparison-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.active {
+  color: #e4b40d;
+}
+.nav-items > a:hover {
+  color: #e4b40d;
+}
+
+.comparison-table {
+  width: 1319px;
+  height: 584px;
+}
+
+tr {
+  border-bottom: 1px solid #d9d9d91a;
+}
+td,
+th {
+  border-right: 1px solid #d9d9d91a;
+  text-align: center;
+  font-family: 'Fira Code';
+}
+td > img,
+th > img {
+  margin: auto;
+}
+th {
+  font-family: Conthrax;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+}
+
+.special-colors {
+  color: #e4b40d;
+}
+
+.nav-btn {
+  background: linear-gradient(to right, #e4b40d, #fbd966);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  /* border: 1px solid white; */
+  position: absolute;
+  right: 44px;
+  /* top: 100px; */
+  transition: all .8s ease-in-out;
+  padding: 10px;
+  min-width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
