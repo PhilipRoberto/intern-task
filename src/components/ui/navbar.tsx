@@ -10,13 +10,13 @@ const Navbar = () => {
     return setToggleDropdown((prev) => !prev);
   };
   return (
-    <nav className="nav flex flex-wrap justify-around items-start sm:items-center mt-5">
+    <nav className="nav flex flex-wrap justify-around items-start sm:items-center py-5">
       <div className="logo flex justify-center items-center gap-3">
         <img src={logoIcon} alt="logo" width={75} height={75} />
         <img src={logoText} alt="logo" width={106} height={28} />
       </div>
       {/* Desktop Navigation */}
-      <div className="nav-items sm:flex hidden justify-center items-center gap-20 font-normal text-lg">
+      <div className="nav-items md:flex hidden justify-center items-center gap-20 font-normal text-lg">
         <Link to={`/`} className="active">
           Home
         </Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to={`/faqs`}>FAQs</Link>
         <Link to={`/contact-us`}>Contact Us</Link>
       </div>
-      <div className="connect-wallet sm:flex hidden font-semibold">
+      <div className="connect-wallet md:flex hidden font-semibold">
         <Link
           to={`/connect-wallet`}
           className="gradient-a text-black transition-all"
@@ -34,7 +34,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Mobile Navigation */}
-      <div className="sm:hidden mobile-nav">
+      <div className="md:hidden mobile-nav">
         <button className="nav-btn block" onClick={toggle} />
         {toggleDropdown ? (
           <div className="dropdown flex flex-wrap flex-1 flex-col justify-center align-middle items-center gap-10">

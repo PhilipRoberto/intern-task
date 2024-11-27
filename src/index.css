@@ -2,19 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* ... */
 @font-face {
-  font-family: 'NeueMachina Light';
-  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Light.otf)
+  font-family: "NeueMachina Light";
+  src: local("Neue-Machina"), url(./assets/fonts/NeueMachina-Light.otf);
 }
 @font-face {
-  font-family: 'NeueMachina Regular';
-  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Regular.otf)
+  font-family: "NeueMachina Regular";
+  src: local("Neue-Machina"), url(./assets/fonts/NeueMachina-Regular.otf);
 }
 @font-face {
-  font-family: 'NeueMachina Ultrabold';
-  src: local('Neue-Machina'), url(./assets/fonts/NeueMachina-Ultrabold.otf)
+  font-family: "NeueMachina Ultrabold";
+  src: local("Neue-Machina"), url(./assets/fonts/NeueMachina-Ultrabold.otf);
 }
 
 @layer base {
@@ -134,13 +133,20 @@
 * {
   color: #fff;
   box-sizing: border-box;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
 }
-body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duration='4000']{
+body[data-aos-duration="4000"] [data-aos],
+[data-aos][data-aos][data-aos-duration="4000"] {
   transition-duration: 4000ms;
 }
 ::-webkit-scrollbar {
   width: 0;
+}
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #071624;
 }
 
 .app-container {
@@ -150,6 +156,30 @@ body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duratio
 
 .main-container {
   width: 100%;
+}
+.hero-forfeground {
+  background-image: url("./assets/bg/hero-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-container {
+  background-image: url("./assets/foreground.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-section-container {
+  background-image: url("./assets/bg/about-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.faqs-section-container {
+  background-image: url("./assets/bg/faqs-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -211,7 +241,7 @@ body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duratio
   height: auto;
 }
 
-.faqs-section-container {
+.faqs-content {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
@@ -226,11 +256,6 @@ body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duratio
   display: flex;
   justify-content: center;
   align-items: center;
-  width: max-content;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
 }
 
 .active {
@@ -243,6 +268,10 @@ body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duratio
 .comparison-table {
   width: 1319px;
   height: 584px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 tr {
@@ -250,9 +279,14 @@ tr {
 }
 td,
 th {
-  border-right: 1px solid #d9d9d91a;
   text-align: center;
-  font-family: 'Fira Code';
+  font-family: "Fira Code";
+}
+th:nth-child(even),
+td:nth-child(even),
+th:nth-child(1),
+td:nth-child(1) {
+  border-right: 1px solid #d9d9d91a;
 }
 td > img,
 th > img {
@@ -281,7 +315,7 @@ th {
   position: absolute;
   right: 44px;
   /* top: 100px; */
-  transition: all .8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   padding: 10px;
   min-width: auto;
   height: auto;

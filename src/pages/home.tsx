@@ -11,7 +11,7 @@ import dollar from "@/assets/features-icons/dollar.png";
 import shield from "@/assets/features-icons/shield.png";
 import phoneOff from "@/assets/features-icons/phoneOff.png";
 import options from "@/assets/features-icons/options.png";
-import moonex from "@/assets/moonex.png"
+import moonex from "@/assets/moonex.png";
 import uniswap from "@/assets/uniswap.png";
 import check from "@/assets/tickNoTick/true.png";
 import noCheck from "@/assets/tickNoTick/false.png";
@@ -71,30 +71,33 @@ const Home = () => {
   ];
   return (
     <div className="main-container">
-      <div className="hero-container flex flex-wrap justify-start items-center">
-        <section className="hero-content flex flex-wrap flex-col justify-center items-start mt-32 ml-24 border-white p-24">
-          <div className="hero-header">
-            <h1 className="text-heading font-extrabold text-7xl">
-              Trusted Multi-Chain <span className="special-colors">DEX</span> Platform
-            </h1>
-            <p className="text-content-message font-normal text-2xl pb-4 pt-2">
-              <span>
-                Trade, earn, and own crypto on all-in-one multi-chain DEX
-              </span>
-            </p>
-          </div>
-          <div className="hero-action-btns flex flex-wrap gap-6 mt-6 font-semibold">
-            <Link to={`/connect-wallet`} className="gradient-a text-black">
-              Connect Wallet
-            </Link>
-            <Link to={`/trade`} className="border-a">
-              Trade Crypto
-            </Link>
-          </div>
-        </section>
+      <div className="hero-foreground">
+        <div className="hero-container flex flex-wrap justify-start items-center">
+          <section className="hero-content flex flex-wrap flex-col justify-center items-start mt-32 ml-24 border-white p-24">
+            <div className="hero-header">
+              <h1 className="text-heading font-extrabold text-7xl">
+                Trusted Multi-Chain <span className="special-colors">DEX</span>{" "}
+                Platform
+              </h1>
+              <p className="text-content-message font-normal text-2xl pb-4 pt-2">
+                <span>
+                  Trade, earn, and own crypto on all-in-one multi-chain DEX
+                </span>
+              </p>
+            </div>
+            <div className="hero-action-btns flex flex-wrap gap-6 mt-6 font-semibold">
+              <Link to={`/connect-wallet`} className="gradient-a text-black">
+                Connect Wallet
+              </Link>
+              <Link to={`/trade`} className="border-a">
+                Trade Crypto
+              </Link>
+            </div>
+          </section>
+        </div>
       </div>
-      <div className="about-section-container">
-        <div className="font-extrabold text-5xl ml-56 my-10">
+      <div className="about-section-container py-10">
+        <div className="font-extrabold text-5xl md:ml-56 ml-10">
           Why <span className="special-colors">MoonEX?</span>
         </div>
         <div className="comparison-table-container mx-auto my-24">
@@ -119,15 +122,28 @@ const Home = () => {
               {comparisons.map((comparison) => {
                 return (
                   <tr>
-                    <td>{comparisons.indexOf(comparison) + 1}.  {comparison.comparison}</td>
                     <td>
-                      <img src={comparison.moonex} alt="check" width={26.25} height={21.39} />
+                      {comparisons.indexOf(comparison) + 1}.{" "}
+                      {comparison.comparison}
                     </td>
                     <td>
-                      <img src={comparison.uniswap} alt="no-check" width={22.92} height={22.92} />
+                      <img
+                        src={comparison.moonex}
+                        alt="check"
+                        width={26.25}
+                        height={21.39}
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={comparison.uniswap}
+                        alt="no-check"
+                        width={22.92}
+                        height={22.92}
+                      />
                     </td>
                   </tr>
-                )
+                );
               })}
             </tbody>
           </table>
@@ -158,35 +174,41 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="faqs-section-container my-40 mx-auto">
-        <div className="faqs-heading text-center font-extrabold text-5xl mt-6 special-colors">
-          FAQs
-        </div>
-        <div className="faqs-content p-20">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>How do I get a Referral Code?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                Do I get rewarded in tokens or ETH when I refer buyers?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>How do I get a Referral Code?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+      <div className="faqs-section-container py-40">
+        <div className="faqs-section mx-auto flex flex-wrap justify-center items-start">
+          <div className="faqs-content max-w-max p-20">
+            <div className="faqs-heading text-center font-extrabold text-5xl special-colors">
+              FAQs
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  How do I get a Referral Code?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>
+                  Do I get rewarded in tokens or ETH when I refer buyers?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes. It comes with default styles that matches the other
+                  components&apos; aesthetic.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>
+                  How do I get a Referral Code?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes. It's animated by default, but you can disable it if you
+                  prefer.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </div>
       <Footer />
