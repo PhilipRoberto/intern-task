@@ -73,9 +73,9 @@ const Home = () => {
     <div className="main-container">
       <div className="hero-foreground">
         <div className="hero-container flex flex-wrap justify-start items-center">
-          <section className="hero-content flex flex-wrap flex-col justify-center items-start mt-32 ml-24 border-white p-24">
+          <section className="hero-content flex flex-wrap flex-col justify-center items-start mt-32 md:ml-5 md:p-24">
             <div className="hero-header">
-              <h1 className="text-heading font-extrabold text-7xl">
+              <h1 className="text-heading font-extrabold text-6xl py-10">
                 Trusted Multi-Chain <span className="special-colors">DEX</span>{" "}
                 Platform
               </h1>
@@ -104,7 +104,7 @@ const Home = () => {
           <table className="comparison-table">
             <thead>
               <tr>
-                <th>Comparison</th>
+                <th><span className="special-colors">Comparison</span></th>
                 <th className="moonex-table flex flex-wrap justify-center items-center">
                   <img src={moonex} alt="logo-icon" width={279} height={79} />
                 </th>

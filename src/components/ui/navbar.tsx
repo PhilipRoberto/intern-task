@@ -2,15 +2,34 @@ import { Link } from "react-router-dom";
 
 import logoIcon from "@/assets/logo/icon.png";
 import logoText from "@/assets/logo/text.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll   
+ = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll',   
+ handleScroll);
+    };
+  }, []);
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const toggle = () => {
     return setToggleDropdown((prev) => !prev);
   };
   return (
-    <nav className="nav flex flex-wrap justify-around items-start sm:items-center py-5">
+    <nav className={`nav flex flex-wrap justify-around items-start sm:items-center py-5 ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo flex justify-center items-center gap-3">
         <img src={logoIcon} alt="logo" width={75} height={75} />
         <img src={logoText} alt="logo" width={106} height={28} />
